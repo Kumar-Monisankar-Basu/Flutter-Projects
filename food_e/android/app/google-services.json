@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "559788872875",
+    "project_id": "tasty-643c3",
+    "storage_bucket": "tasty-643c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559788872875:android:90698ab543a42226c7d3ee",
+        "android_client_info": {
+          "package_name": "com.tasty.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6oyo1LWoIw1ZJAEwoF-Rau017uBxuHeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

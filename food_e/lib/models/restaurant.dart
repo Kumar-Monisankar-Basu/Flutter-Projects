@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:food_e/models/cart_item.dart';
+import 'package:intl/intl.dart';
 
 import 'food.dart';
 
@@ -386,11 +387,15 @@ class Restaurant extends ChangeNotifier {
       ],
     ),
   ];
+  final List<CartItem> _cart = [];
+
+  String _deliveryAddress = "99 Hollywood Blv";
 
   List<Food> get menu => _menu;
   List<CartItem> get cart => _cart;
 
-  final List<CartItem> _cart = [];
+  String get deliveryAddress => _deliveryAddress;
+
   void addToCart(Food food, List<Addon> selectedAddons) {
     CartItem? cartItem = _cart.firstWhereOrNull((item) {
       bool isSameFood = item.food == food;
@@ -448,5 +453,47 @@ class Restaurant extends ChangeNotifier {
   void clearCart() {
     _cart.clear();
     notifyListeners();
+  }
+
+  void updateDeliveryAddress(String newAddress) {
+    _deliveryAddress = newAddress;
+    notifyListeners();
+  }
+
+  String displayCartReceipt() {
+    final receipt = StringBuffer();
+    receipt.writeln("Here's Your Receipt.");
+    receipt.writeln();
+    String formattedDate =
+        DateFormat('yyyy-MM-dd HH-mm-ss').format(DateTime.now());
+    receipt.writeln(formattedDate);
+    receipt.writeln();
+    receipt.writeln("----------");
+
+    for (final cartItem in _cart) {
+      receipt.writeln(
+          "${cartItem.quantity}*${cartItem.food.name} - ${_formatPrice(cartItem.food.price)}");
+      if (cartItem.selectedAddons.isNotEmpty) {
+        receipt.writeln(" Add-ons:${_formatAddons(cartItem.selectedAddons)}");
+      }
+      receipt.writeln();
+    }
+    receipt.writeln("----------");
+    receipt.writeln();
+    receipt.writeln("Total Items: ${getTotalItemCount()}");
+    receipt.writeln("Total Price: ${_formatPrice(getTotalPrice())}");
+    receipt.writeln();
+    receipt.writeln("Deliveing To:$deliveryAddress");
+    return receipt.toString();
+  }
+
+  String _formatPrice(double price) {
+    return "\$${price.toStringAsFixed(2)}";
+  }
+
+  String _formatAddons(List<Addon> addons) {
+    return addons
+        .map((addon) => "${addon.name} (${_formatPrice(addon.price)})")
+        .join(", ");
   }
 }

@@ -38,6 +38,12 @@ dependencies:
   provider: ^6.1.2
   collection: ^1.18.0
   lottie: ^3.1.2
+  flutter_credit_card: ^4.0.1
+  intl: ^0.19.0
+  firebase_core: ^3.2.0
+  firebase_auth: ^5.1.2
+  cloud_firestore: ^5.1.0
+  firebase_analytics: ^11.2.0
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +54,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -3,6 +3,7 @@ import 'package:food_e/components/my_button.dart';
 import 'package:food_e/components/my_cart_tile.dart';
 // import 'package:food_e/models/cart_item.dart';
 import 'package:food_e/models/restaurant.dart';
+import 'package:food_e/pages/payment_page.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
@@ -72,7 +73,12 @@ class CartPage extends StatelessWidget {
               ),
               MyButton(
                 text: "Go To Checkout",
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PaymentPage(),
+                  ),
+                ),
               ),
               const SizedBox(height: 25),
             ],

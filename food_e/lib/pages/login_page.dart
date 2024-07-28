@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_e/components/my_button.dart';
 import 'package:food_e/components/my_textfield.dart';
-import 'package:food_e/pages/home_page.dart';
+// import 'package:food_e/pages/home_page.dart';
+import 'package:food_e/services/auth/auth_service.dart';
 import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,11 +18,27 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void login() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
+  void login() async {
+    final _authService = AuthService();
+    try {
+      await _authService.SignInWithEmailPassword(
+          emailController.text, passwordController.text);
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
+  }
+
+  void forgotPw() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        title: const Text("User Tapped Forgot Password!"),
       ),
     );
   }

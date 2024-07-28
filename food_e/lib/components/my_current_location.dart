@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:food_e/models/restaurant.dart';
+import 'package:provider/provider.dart';
 
 class MyCurrentLocation extends StatelessWidget {
   const MyCurrentLocation({super.key});
 
   void openLocationSearchBox(BuildContext context) {
+    final TextEditingController textController = TextEditingController();
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text("Your Location"),
         content: const TextField(
-          decoration: InputDecoration(hintText: "Search Address..."),
+          decoration: InputDecoration(hintText: "Enter Address..."),
         ),
         actions: [
-          MaterialButton(onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          MaterialButton(
+            onPressed: () {
+              Navigator.pop(context);
+              textController.clear();
+            },
+            child: const Text('Cancel'),
           ),
-          MaterialButton(onPressed: () => Navigator.pop(context),
-          child: const Text('Save'),
+          MaterialButton(
+            onPressed: () {
+              String newAddress = textController.text;
+              context.read<Restaurant>().updateDeliveryAddress(newAddress);
+              Navigator.pop(context);
+              textController.clear();
+            },
+            child: const Text('Save'),
           ),
         ],
       ),
@@ -26,7 +40,10 @@ class MyCurrentLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(25.0),
+      padding: const EdgeInsets.only(
+        left: 25,
+        top: 20,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,11 +55,14 @@ class MyCurrentLocation extends StatelessWidget {
             onTap: () => openLocationSearchBox(context),
             child: Row(
               children: [
-                Text(
-                  "6991 Hollywood Road",
-                  style: TextStyle(
+                Consumer<Restaurant>(
+                  builder: (context, restaurant, child) => Text(
+                    restaurant.deliveryAddress,
+                    style: TextStyle(
                       color: Theme.of(context).colorScheme.inversePrimary,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 Icon(Icons.keyboard_arrow_down_rounded),
               ],
