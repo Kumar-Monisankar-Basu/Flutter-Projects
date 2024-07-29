@@ -1,16 +1,20 @@
 # food_e
 
-A new Flutter project.
+Full-Stack Food Delivery App Using Flutter + Firebase.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Project Summary
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Developed a full-stack food delivery app** using Flutter for Android and iOS platforms.
+- **Implemented dynamic tab bar navigation** for categorized food items such as Burgers, Salads, Sides, Desserts, and Drinks.
+- **Designed and integrated a Food model** with attributes including name, description, image path, price, category, and add-ons.
+- **Added cart functionality** with methods for adding, removing, and managing items, including handling selected add-ons.
+- **Created a cart page** with dynamic navigation and custom components like `MyCartTile` and `QuantitySelector` for managing cart items and quantities.
+- **Integrated a checkout process** with a payment page featuring a credit card widget and added functionality for payment confirmation.
+- **Developed a receipt generation feature** using Firebase, including date formatting and a cart summary.
+- **Designed a delivery progress page** with a custom bottom navigation bar for driver details and support for dark mode.
+- **Set up Firebase for authentication** and Firestore for database operations, including user sign-in, sign-up, order management, and real-time updates.
+- **Added manual input for delivery address** and included it in the receipt.
+- **Utilized Provider for state management** and organized code with MVC architecture for maintainability.
+- **Designed UI/UX** with custom widgets, light and dark mode support, and a responsive layout.
