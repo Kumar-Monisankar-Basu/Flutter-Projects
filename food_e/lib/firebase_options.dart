@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyADNtWTcJcGY1M1gZsoVP1nI0WfL8i5pGU',
-    appId: '1:559788872875:web:0af3d936be0987bcc7d3ee',
-    messagingSenderId: '559788872875',
-    projectId: 'tasty-643c3',
-    authDomain: 'tasty-643c3.firebaseapp.com',
-    storageBucket: 'tasty-643c3.appspot.com',
-    measurementId: 'G-LN98GLZ7MQ',
+    apiKey: 'No',
+    appId: '1:No:web:No',
+    messagingSenderId: 'No',
+    projectId: 'No-NO',
+    authDomain: 'No-No.firebaseapp.com',
+    storageBucket: 'NO.appspot.com',
+    measurementId: 'No',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA6oyo1LWoIw1ZJAEwoF-Rau017uBxuHeI',
-    appId: '1:559788872875:android:90698ab543a42226c7d3ee',
-    messagingSenderId: '559788872875',
-    projectId: 'tasty-643c3',
-    storageBucket: 'tasty-643c3.appspot.com',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBfzr2CNH8WRGzP6PlQvIr_OShmEvI9QJ8',
-    appId: '1:559788872875:ios:11fb030a188ecf60c7d3ee',
-    messagingSenderId: '559788872875',
-    projectId: 'tasty-643c3',
-    storageBucket: 'tasty-643c3.appspot.com',
-    iosBundleId: 'com.example.foode',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
+    iosBundleId: '',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBfzr2CNH8WRGzP6PlQvIr_OShmEvI9QJ8',
-    appId: '1:559788872875:ios:11fb030a188ecf60c7d3ee',
-    messagingSenderId: '559788872875',
-    projectId: 'tasty-643c3',
-    storageBucket: 'tasty-643c3.appspot.com',
-    iosBundleId: 'com.example.foode',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
+    iosBundleId: '',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyADNtWTcJcGY1M1gZsoVP1nI0WfL8i5pGU',
-    appId: '1:559788872875:web:c749893a25e450aec7d3ee',
-    messagingSenderId: '559788872875',
-    projectId: 'tasty-643c3',
-    authDomain: 'tasty-643c3.firebaseapp.com',
-    storageBucket: 'tasty-643c3.appspot.com',
-    measurementId: 'G-ETL4MJ2NSW',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    authDomain: '',
+    storageBucket: '',
+    measurementId: '',
   );
 }
